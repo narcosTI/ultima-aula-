@@ -31,7 +31,7 @@ export default function StudentId({ info, onUpdate }: StudentIdProps) {
   };
 
   const handleReset = () => {
-    setNameInput('Marcos Agirti');
+    setNameInput('Marcos Paulo de Souza Rocha');
     setCourseInput('Análise e Desenvolvimento de Sistemas');
     setInstInput('Faculdade de Tecnologia Aplicada');
   };

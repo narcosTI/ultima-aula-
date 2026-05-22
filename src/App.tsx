@@ -38,12 +38,18 @@ export default function App() {
   const [studentInfo, setStudentInfo] = React.useState<StudentInfo>(() => {
     try {
       const saved = localStorage.getItem('sbc_student_info');
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.name === 'Marcos Agirti' || !parsed.name || parsed.name.includes('[Seu nome]')) {
+          parsed.name = 'Marcos Paulo de Souza Rocha';
+        }
+        return parsed;
+      }
     } catch (e) {
       console.error(e);
     }
     return {
-      name: 'Marcos Agirti',
+      name: 'Marcos Paulo de Souza Rocha',
       course: 'Análise e Desenvolvimento de Sistemas',
       institution: 'Faculdade de Tecnologia Aplicada',
       caseSelected: 'Caso 1 – Empresa multinacional de tecnologia',
